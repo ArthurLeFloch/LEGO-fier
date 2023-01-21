@@ -14,4 +14,4 @@ Easy to use user interface
 4) Save your LEGO Pixel Art creation to your storage
 
 ## License
-LEGO Pixel Art is licensed under the [insert license here].
+LEGO Pixel Art is licensed under the [Apache License 2.0](https://github.com/ArthurLeFloch/LEGOImageTranform/edit/master/LICENSE).
