@@ -314,7 +314,12 @@ class ImageSetupActivity : AppCompatActivity() {
     private fun maxResolutionSave(){
         val timeStamp = SimpleDateFormat("yyyyMMdd_HHmmss").format(Date())
         val imageFileName = "legofier_${timeStamp}_default"
-        val storageDir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM).toString()
+        var storageDir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM).toString()
+        storageDir += "/LEGO-fier/"
+        if(!File(storageDir).exists()){
+            File(storageDir).mkdir()
+        }
+
         Log.d(TAG, storageDir)
         val output = FileOutputStream("$storageDir/$imageFileName.png")
 
@@ -350,8 +355,13 @@ class ImageSetupActivity : AppCompatActivity() {
     private fun classicSave(){
         val timeStamp = SimpleDateFormat("yyyyMMdd_HHmmss").format(Date())
         val imageFileName = "legofier_$timeStamp"
-        val storageDir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM).toString()
+        var storageDir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM).toString()
+        storageDir += "LEGO-fier/"
+        if(!File(storageDir).exists()){
+            File(storageDir).mkdir()
+        }
         Log.d(TAG, storageDir)
+
         val output = FileOutputStream("$storageDir/$imageFileName.png")
 
         val scaledBitmap = Bitmap.createScaledBitmap(finalBitmap, finalBitmap.width*10, finalBitmap.height*10, false)
